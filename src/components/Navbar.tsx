@@ -34,7 +34,7 @@ export function Navbar() {
   <img 
     src="/logo.png" 
     alt="Vanguard Horology Co. Logo" 
-    className="h-6 md:h-7 w-auto object-contain transition-all duration-300 group-hover:brightness-110" 
+    className="h-3 md:h-4 w-auto object-contain transition-all duration-300 group-hover:brightness-110" 
   />
 </Link>
 

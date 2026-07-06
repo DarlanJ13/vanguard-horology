@@ -25,7 +25,7 @@ export function Navbar() {
         className="mx-auto h-20 flex items-center justify-between px-6 lg:px-12 transition-all duration-350 bg-[#050505]/70 backdrop-blur-[14px] border-b border-white/[0.06]"
         aria-label="Navegação principal"
       >
-       {/* Link com a Logo Oficial Recortada e Perfeita */}
+      {/* Link com a Logo Oficial Recortada em Alta Resolução */}
 <Link
   to="/"
   className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"

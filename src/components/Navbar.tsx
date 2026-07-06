@@ -21,25 +21,23 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      {/* Alterado para preto absoluto para mesclar perfeitamente com o fundo da logo.jpg */}
       <nav
-        className="mx-auto h-20 flex items-center justify-between px-6 lg:px-12 transition-all duration-350 bg-[#000000]/90 backdrop-blur-[14px] border-b border-white/[0.04]"
+        className="mx-auto h-20 flex items-center justify-between px-6 lg:px-12 transition-all duration-350 bg-[#050505]/70 backdrop-blur-[14px] border-b border-white/[0.06]"
         aria-label="Navegação principal"
       >
-        {/* Link com a Nova Logo Oficial em .jpg */}
+        {/* Link com a Logo Antiga Recortada */}
         <Link
           to="/"
-          className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
+          className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"
           aria-label="Vanguard Horology Co. Página inicial"
         >
           <img 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="Vanguard Horology Co. Logo" 
-            className="h-7 md:h-8 w-auto min-w-[140px] md:min-w-[180px] object-cover object-center max-py-1 scale-110 transition-all duration-300 group-hover:brightness-110" 
+            className="h-7 md:h-8 w-auto object-contain transition-all duration-300 group-hover:brightness-110" 
           />
         </Link>
 
-        {/* Links centrais com tipografia ajustada para a nova identidade */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
             link.external ? (
@@ -48,7 +46,7 @@ export function Navbar() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm tracking-wider uppercase text-[#F4F1EA]/80 hover:text-[#D4AF37] transition-colors duration-350 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 after:bg-[#D4AF37] hover:after:w-full after:transition-all after:duration-350"
+                  className="text-sm tracking-wider uppercase text-[#F5F2EA]/80 hover:text-[#E7D2A3] transition-colors duration-350 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 after:bg-[#C8A45A] hover:after:w-full after:transition-all after:duration-350"
                 >
                   {link.label}
                 </a>
@@ -57,10 +55,10 @@ export function Navbar() {
               <li key={link.label}>
                 <Link
                   to={link.to!}
-                  className={`text-sm tracking-wider uppercase transition-colors duration-350 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-[#D4AF37] after:transition-all after:duration-350 ${
+                  className={`text-sm tracking-wider uppercase transition-colors duration-350 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-[#C8A45A] after:transition-all after:duration-350 ${
                     isActive(link.to!)
-                      ? 'text-[#D4AF37] after:w-full'
-                      : 'text-[#F4F1EA]/80 hover:text-[#D4AF37] after:w-0 hover:after:w-full'
+                      ? 'text-[#E7D2A3] after:w-full'
+                      : 'text-[#F5F2EA]/80 hover:text-[#E7D2A3] after:w-0 hover:after:w-full'
                   }`}
                 >
                   {link.label}
@@ -70,11 +68,10 @@ export function Navbar() {
           )}
         </ul>
 
-        {/* Ícones com as cores atualizadas */}
         <div className="flex items-center gap-4">
           <Link
             to="/wishlist"
-            className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full border border-white/[0.08] text-[#F4F1EA]/80 hover:text-[#D4AF37] hover:border-[#D4AF37]/40 transition-all duration-350"
+            className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full border border-[#2A2A2A] text-[#F5F2EA]/80 hover:text-[#C8A45A] hover:border-[#C8A45A]/40 transition-all duration-350"
             aria-label="Lista de desejos"
           >
             <Heart className="w-[18px] h-[18px]" />
@@ -82,19 +79,19 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => navigate('/checkout')}
-            className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/[0.08] text-[#F4F1EA]/80 hover:text-[#D4AF37] hover:border-[#D4AF37]/40 transition-all duration-350"
+            className="relative flex items-center justify-center w-10 h-10 rounded-full border border-[#2A2A2A] text-[#F5F2EA]/80 hover:text-[#C8A45A] hover:border-[#C8A45A]/40 transition-all duration-350"
             aria-label={`Carrinho de compras com ${totalItems} itens`}
           >
             <ShoppingBag className="w-[18px] h-[18px]" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-[10px] font-medium bg-[#D4AF37] text-[#000000] rounded-full">
+              <span className="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-[10px] font-medium bg-[#C8A45A] text-[#050505] rounded-full">
                 {totalItems > 9 ? '9+' : totalItems}
               </span>
             )}
           </button>
           <button
             type="button"
-            className="md:hidden flex items-center justify-center w-10 h-10 text-[#F4F1EA]"
+            className="md:hidden flex items-center justify-center w-10 h-10 text-[#F5F2EA]"
             onClick={() => setOpen((prev) => !prev)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -105,11 +102,10 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Menu Mobile */}
       {open && (
         <div
           id="mobile-menu"
-          className="md:hidden absolute top-full inset-x-0 bg-[#000000]/95 backdrop-blur-[14px] border-b border-white/[0.06] px-6 py-6"
+          className="md:hidden absolute top-full inset-x-0 bg-[#050505]/95 backdrop-blur-[14px] border-b border-white/[0.06] px-6 py-6"
         >
           <ul className="flex flex-col gap-5">
             {navLinks.map((link) =>
@@ -119,7 +115,7 @@ export function Navbar() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="block text-sm tracking-wider uppercase text-[#F4F1EA]/80 hover:text-[#D4AF37]"
+                    className="block text-sm tracking-wider uppercase text-[#F5F2EA]/80 hover:text-[#E7D2A3]"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -131,8 +127,8 @@ export function Navbar() {
                     to={link.to!}
                     className={`block text-sm tracking-wider uppercase ${
                       isActive(link.to!)
-                        ? 'text-[#D4AF37]'
-                        : 'text-[#F4F1EA]/80 hover:text-[#D4AF37]'
+                        ? 'text-[#E7D2A3]'
+                        : 'text-[#F5F2EA]/80 hover:text-[#E7D2A3]'
                     }`}
                     onClick={() => setOpen(false)}
                   >

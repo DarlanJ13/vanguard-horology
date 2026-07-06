@@ -25,18 +25,18 @@ export function Navbar() {
         className="mx-auto flex items-center justify-between px-6 lg:px-12 py-5 transition-all duration-350 bg-[#050505]/70 backdrop-blur-[14px] border-b border-white/[0.06]"
         aria-label="Navegação principal"
       >
-        {/* Link com a nova Logo Oficial puxada da pasta public */}
-        <Link
-          to="/"
-          className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"
-          aria-label="Vanguard Horology Co. Página inicial"
-        >
-          <img 
-            src="/logo.png" 
-            alt="Vanguard Horology Co. Logo" 
-            className="h-9 md:h-11 w-auto object-contain transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.01]" 
-          />
-        </Link>
+        {/* Link com a Logo Oficial Ajustada e Compacta */}
+<Link
+  to="/"
+  className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"
+  aria-label="Vanguard Horology Co. Página inicial"
+>
+  <img 
+    src="/logo.png" 
+    alt="Vanguard Horology Co. Logo" 
+    className="h-6 md:h-7 w-auto object-contain transition-all duration-300 group-hover:brightness-110" 
+  />
+</Link>
 
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Heart, Watch } from 'lucide-react';
+import { Menu, X, ShoppingBag, Heart } from 'lucide-react'; // Removido o ícone Watch que não será mais usado
 import { useCart } from '../contexts/CartContext';
 import { whatsappLink } from '../data';
 
@@ -25,15 +25,17 @@ export function Navbar() {
         className="mx-auto flex items-center justify-between px-6 lg:px-12 py-5 transition-all duration-350 bg-[#050505]/70 backdrop-blur-[14px] border-b border-white/[0.06]"
         aria-label="Navegação principal"
       >
+        {/* Link com a nova Logo Oficial puxada da pasta public */}
         <Link
           to="/"
-          className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"
+          className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45A] rounded"
           aria-label="Vanguard Horology Co. Página inicial"
         >
-          <Watch className="w-6 h-6 text-[#C8A45A]" aria-hidden="true" />
-          <span className="font-['Ivar_Display'] text-[#F5F2EA] text-lg tracking-widest uppercase">
-            Vanguard
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Vanguard Horology Co. Logo" 
+            className="h-9 md:h-11 w-auto object-contain transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.01]" 
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
